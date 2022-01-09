@@ -53,6 +53,14 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
 
+
+        'ProjectDisk' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/projectDocs'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*
@@ -68,6 +76,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('storage/projectDocs') => storage_path('app/public/projectDocs'),
     ],
 
 ];

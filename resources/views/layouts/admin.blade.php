@@ -104,7 +104,7 @@
                 </a>
               </li>
               <li>
-                <a href="typography.html">
+                <a href="{{ route('addProject') }}">
                   <i class="fa fa-font"></i>Project
                 </a>
               </li>

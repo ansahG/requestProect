@@ -23,17 +23,18 @@ class ServiceForm extends Component
     }
 
 
-    public function mount($service)
-    {
-        $this->service = null;
+ public function mount($service)
+    {   $this->service = null;
+
         if($service)
+        {
             $this->service = $service;
             $this->service_name = $this->service->service_name;
             $this->service_description = $this->service->service_description;
             $this->service_price = $this->service->service_price;
             $this->show_service_price = $this->service->show_service_price;
+        }
     }
-
 
 
     public function submit()
@@ -41,7 +42,7 @@ class ServiceForm extends Component
          $serviceInfo= $this->validate([
             'service_name' => ['required', 'max:40'],
             'service_description' => ['required','max:400'],
-            'service_price' => ['max:10'],
+            'service_price' => ['max:10', 'numeric'],
             'show_service_price' => [''], 
         ]);
          

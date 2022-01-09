@@ -29,4 +29,7 @@ Route::middleware(['auth:sanctum'])->get('/manage_website/services' , [App\Http\
 Route::middleware(['auth:sanctum'])->get('/manage_website/services/{service}' , [App\Http\Controllers\admin\adminController::class , 'editService'])->name('editService');
 
 Route::middleware(['auth:sanctum'])->get('/contact/{user}/{contact}' , [App\Http\Controllers\admin\contactController::class , 'editContact'])->name('contactInfo');
+// project routes
+Route::middleware(['auth:sanctum'])->get('/project' , [App\Http\Controllers\admin\projectController::class , 'addProject'])->name('addProject');
+Route::middleware(['auth:sanctum'])->get('/project/{project}' , [App\Http\Controllers\admin\projectController::class , 'viewProject'])->name('viewProject');
 

@@ -35,7 +35,7 @@ class ContactInformation extends Component
             $this->twitter = $this->contact->twitter;
             $this->instagram = $this->contact->instagram;
         }
-      }
+    }
 
     public function addContactInfo()
     {

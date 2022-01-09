@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\admin\project\AddProject;
 use App\Models\admin\Service;
 use App\Models\admin\ContactInformation;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -24,6 +25,13 @@ class User extends Authenticatable
     public function getRouteKeyName()
     {
         return 'name';
+    }
+
+
+    // relationships
+        public function addProject()
+    {
+        return $this->hasMany(AddProject::class);
     }
 
     public function services()
