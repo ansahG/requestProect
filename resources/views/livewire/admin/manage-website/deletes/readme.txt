@@ -1,0 +1,2 @@
+This container is only to host the delete functionality for the service page. . . . . 
+The views of the components will replace the default blade availabloe on the laravel display blade for functionality

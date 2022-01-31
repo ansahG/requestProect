@@ -23,8 +23,8 @@ class Service extends Model
         public $fillable = [
         'service_name',
         'service_description',
-        'service_price',
-        'show_service_price',
+        // 'service_price',
+        // 'show_service_price',
     ];
 
 }

@@ -7,3 +7,4 @@
 
     <x-jet-welcome />
 </x-app-layout>
+

@@ -9,7 +9,7 @@ class AddProject extends Model
 {
     public function getRouteKeyName()
     {
-        return 'project_theme';
+        return 'projectId';
     }
 
     public function user()

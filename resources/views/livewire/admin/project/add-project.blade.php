@@ -11,6 +11,8 @@
 
         {{-- form div starts here --}}
 
+
+
         <div class="col-lg-6">
           <div class="content-box">
             <div class="content-title big-box i-block">
@@ -52,8 +54,7 @@
               </div>
 
               <div class="form-group">
-                <label for="description"> Project Description </label>
-                <textarea  type="type" placeholder="Description" class="form-control material" wire:model="project_description"> </textarea>
+                <textarea  type="type" placeholder="Project Description" class="form-control material" wire:model="project_description"> </textarea>
               </div>
               <div>
                 @error('project_description')
@@ -82,14 +83,33 @@
               </div>
              
               <div class="form-group">
+                @if($projectDocs)
                 <button type="submit" class="btn btn-warning text-uppercase waves">Add Project</button>
+                @endif
+
+                <div class="bg-warning"> 
+                @if($projectId)
+                <p>Copy and share this id with client of this project.</p>
+                <p>This code is expired the moment this project is updated in anyway</p>
+               <div> {{ $project->projectId }} </div>
+                @endif
+                </div>
               </div>
 
             </form>   
                           {{-- actual form ends here --}}
       
            </div>
+
+
+
           </div>
+             @if($project)
+                <div class="block shadow" style="max-width: 25px; max-height: 25px;text-align:center;align-items: center; padding-bottom: 50px;">           
+                  <iframe src="{{ asset('storage/projectDocs/'.$project->projectDocs) }}" height="200" width="300"></iframe>
+              </div>
+            @endif
+          
         </div> {{-- form div row ends here --}}
 
 
@@ -110,11 +130,19 @@
              {{-- form starts here --}}
             
             @forelse($projects as $project)
-            <a href="{{ route('viewProject', $project->project_theme) }}">
+           <div class="list-group">
+            <div class="list-group-item"> 
+              <a href="{{ route('viewProject', $project->projectId) }}">
 
-            {{ $project->project_theme }} for {{$project->company_name}}
+                {{ $project->project_theme }} for {{$project->company_name}}
 
-            </a>
+              </a>
+            </div>
+           </div>
+
+
+
+
             @empty
               <h3> No project added or in progress, add one there  </h3>
             @endforelse
@@ -127,3 +155,4 @@
 
       </div>
       {{-- main row div ends here --}}
+

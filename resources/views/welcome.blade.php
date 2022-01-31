@@ -41,6 +41,9 @@
         </div>
     </div>
 
+    <h1> {{ $facebook->facebook }}</h1>
+
+
     <div class="container-fluid my-5 pt-5 px-5">
         <div class="row justify-content-center px-4">
             <div class="col-md-12 col-lg-9">

@@ -11,15 +11,15 @@ class ServiceForm extends Component
 
     public $service_name;
     public $service_description;
-    public $service_price;
-    public $show_service_price;
+    // public $service_price;
+    // public $show_service_price;
 
     public function resetValues()
     {
     return  $this->service_name = null;
     return  $this->service_description = null;
-    return  $this->service_price = null;
-    return  $this->show_service_price = null;
+    // return  $this->service_price = null;
+    // return  $this->show_service_price = null;
     }
 
 
@@ -31,8 +31,8 @@ class ServiceForm extends Component
             $this->service = $service;
             $this->service_name = $this->service->service_name;
             $this->service_description = $this->service->service_description;
-            $this->service_price = $this->service->service_price;
-            $this->show_service_price = $this->service->show_service_price;
+            // $this->service_price = $this->service->service_price;
+            // $this->show_service_price = $this->service->show_service_price;
         }
     }
 
@@ -41,9 +41,9 @@ class ServiceForm extends Component
     {
          $serviceInfo= $this->validate([
             'service_name' => ['required', 'max:40'],
-            'service_description' => ['required','max:400'],
-            'service_price' => ['max:10', 'numeric'],
-            'show_service_price' => [''], 
+            'service_description' => ['required','max:200'],
+            // 'service_price' => ['max:100000', 'numeric'],
+            // 'show_service_price' => ['nullable'], 
         ]);
          
          if($this->service)

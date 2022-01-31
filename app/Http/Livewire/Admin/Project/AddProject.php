@@ -20,6 +20,8 @@ class AddProject extends Component
    public $projectId;
 
 
+
+
        public function mount($project)
     {   $this->project = null;
 
@@ -45,10 +47,11 @@ class AddProject extends Component
         'company_email' =>['required','email'],
         'project_description' =>['required','max:200'],
         'amount_charged' =>['required', 'numeric'],
-        'projectDocs' =>'mimes:docx,pdf',
+        'projectDocs' => 'nullable|mimes:doc,docx,pdf|max:5040'
     ],
         [
-            'amount_charged.required' => 'for statistcal puporses, you have to enter the amount charged for this project'
+            'amount_charged.required' => 'for statistcal puporses, you have to enter the amount charged for this project',
+            'projectDocs.max' => 'File size should not be more than 5mb'
         ],
     );
 
@@ -60,18 +63,22 @@ class AddProject extends Component
                 // step 2
             Storage::disk('ProjectDisk')->delete($this->project->projectDocs);//delete existing file from the disk
             };
-            $projectInfo['projectId'] = Hash::make($projectInfo['amount_charged']);
-             
+
+            $projectInfo['projectId'] = encrypt($projectInfo['company_email']);
             $projectInfo['projectDocs'] = $this->projectDocs->store('/', 'ProjectDisk');
             auth()->user()->addProject()->update($projectInfo);
             session()->flash('message', 'project updated with success');
+            
        }
         else
         {
              // we will not let user enter the ID manually so after validation, we smartly use the validated price charged and then hash it to represent the id. Here we do not need to validate the id since its system generated and ai powered so we bring tha outa the validation closure 
-        $projectInfo['projectId'] = Hash::make($projectInfo['amount_charged']);
-             
-            $projectInfo['projectDocs'] = $this->projectDocs->store('/', 'ProjectDisk');
+        $projectInfo['projectId'] = encrypt($projectInfo['project_theme']);
+        if($projectInfo['projectDocs'] )
+            { 
+                // if there is an uploaded file, then we store it else we just pass by to the save method.
+            $projectInfo['projectDocs'] = $this->projectDocs->store('/', 'ProjectDisk');            
+            }
             auth()->user()->addProject()->create($projectInfo);
             session()->flash('message', 'project added with success');
         }//else enda here

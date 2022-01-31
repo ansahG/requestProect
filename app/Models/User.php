@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Models;
+
+use App\Models\AboutUs;
 use App\Models\admin\project\AddProject;
 use App\Models\admin\Service;
-use App\Models\admin\ContactInformation;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -29,7 +30,13 @@ class User extends Authenticatable
 
 
     // relationships
-        public function addProject()
+
+    public function aboutus()
+    {
+        return $this->hasOne(AboutUs::class);
+    }
+    
+    public function addProject()
     {
         return $this->hasMany(AddProject::class);
     }
@@ -39,10 +46,6 @@ class User extends Authenticatable
         return $this->hasMany(Service::class);
     }
 
-    public function contactInformation()
-    {
-        return $this->hasOne(ContactInformation::class);
-    }
     /**
      * The attributes that are mass assignable.
      *

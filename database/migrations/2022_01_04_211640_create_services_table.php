@@ -17,9 +17,9 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('service_name');
-            $table->string('service_description');
-            $table->string('service_price')->default('00.00');
-            $table->boolean('show_service_price')->default(false);
+            $table->longtext('service_description');
+            // $table->string('service_price')->default('00.00');
+            // $table->boolean('show_service_price')->default(2);
             $table->timestamps();
         });
     }

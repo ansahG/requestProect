@@ -25,7 +25,7 @@
                 <small style="color:red"> {{ $message }} </small>
                 @enderror
               </div>
-
+{{-- 
               <div class="form-group">
                 <input  type="number" placeholder="Add price for this service" class="form-control material" wire:model="service_price">
               </div>
@@ -35,7 +35,7 @@
                 @enderror
               </div>
 
-
+ --}}{{-- 
               <div class="form-group">
                 <div class="checkbox">
 
@@ -43,7 +43,7 @@
                   <label for="agree">Show price on website</label>
 
                 </div>
-              </div>
+              </div> --}}
               <div class="form-group">
                 <button type="submit" class="btn btn-warning text-uppercase waves">Submit</button>
               </div>
