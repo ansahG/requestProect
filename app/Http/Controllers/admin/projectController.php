@@ -21,7 +21,15 @@ class projectController extends Controller
     public function guestViewProject(AddProject $projectId)
     {
         $file = $projectId->projectDocs;
-         // return Storage::disk('ProjectDisk')->download($file);
-        return view('guestsViews.thankYou');
+        // $load =  download('storage/projectDocs/'.$file, 200);
+        // $redi = view('guestsViews.thankYou');
+
+        //     return response([$load, $redi]);
+        // return response()
+        // ->download('storage/projectDocs/'.$file)
+        //     ->redirect()->route('thankYou');
+
+        return Storage::disk('ProjectDisk')->download($file);
+        // return view('guestsViews.thankYou');
     }
 }

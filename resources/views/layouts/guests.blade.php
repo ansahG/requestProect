@@ -38,7 +38,7 @@
 
     <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="item active" style="background-image: url(images/slider/1.jpg)">
+        <div class="item active" style="background-image: url({{ asset('guestAssets/images/slider/1.jpeg') }})">
           <div class="caption">
             <h1 class="animated fadeInLeftBig">Welcome to  <span> {{ config('app.name') }}</span></h1>
             
@@ -63,8 +63,8 @@
           </div>
         </div> --}}
       </div>
-      <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-      <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+     {{--  <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+      <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a> --}}
 
       <a id="tohash" href="#services"><i class="fa fa-angle-down"></i></a>
 
@@ -112,6 +112,7 @@
         </div>
       </div>
     </div>
+    {{-- background image is in the css file guestAssets/css/@main --}}
   </section><!--/#services-->
   <section id="about-us" class="parallax">
     <div class="container">
@@ -509,8 +510,8 @@
             <p>&copy; 2022 {{ config('app.name') }} </p>
           </div>
           <div class="col-sm-6">
-            <p class="pull-right">Designed by <a href="http://www.themeum.com/">Themeum</a></p>
-          </div>
+{{--             <p class="pull-right">Designed by <a href="http://www.themeum.com/">Themeum</a></p>
+ --}}          </div>
         </div>
       </div>
     </div>

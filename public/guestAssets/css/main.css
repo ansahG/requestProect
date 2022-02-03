@@ -323,7 +323,7 @@ section {
 ********About CSS*******
 **************************/
 #about-us {
-  background-image: url(../images/about-bg.jpg);
+  background-image: url(../images/about-bg.jpeg);
   padding: 60px 0;
 }
 
@@ -860,7 +860,7 @@ section {
 }
 
 #contact-us {
-  background-image:url(../images/contact-bg.jpg);
+  background-image:url(../images/contact-bg.jpeg);
   padding-bottom: 90px; 
 }
 
@@ -869,11 +869,14 @@ section {
 }
 
 .form-control {
-  background-color: transparent;
+/*  background-color: transparent;
+*/
   border-color: rgba(255,255,255,.1);
-  height: 50px;
+/*border-color: blue;
+*/ height: 50px;
   border-radius: 0;
   box-shadow: none;
+  background-color: white;
 }
 
 textarea.form-control {

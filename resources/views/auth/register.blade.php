@@ -1,3 +1,7 @@
+@if(session()->has('message'))
+<h2 class="alert alert-danger">{{ session('message') }}
+</h2>
+@endif
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">

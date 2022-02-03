@@ -81,7 +81,7 @@
                     
 
                 <div class="form-group">
-                  <button type="submit" class="">Send Now</button>
+                  <button type="submit" class="btn btn-primary">Send Now</button>
                 </div>
               </form>
 
@@ -93,9 +93,9 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                 <ul class="address">
                   <li><i class="fa fa-map-marker"></i> <span> Address:</span> 2400 South Avenue A </li>
-                  <li><i class="fa fa-phone"></i> <span> Phone:</span> +928 336 2000  </li>
-                  <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:someone@yoursite.com"> support@oxygen.com</a></li>
-                  <li><i class="fa fa-globe"></i> <span> Website:</span> <a href="#">www.sitename.com</a></li>
+                  <li><i class="fa fa-phone"></i> <span> Phone:</span> +233 550 48 1140  </li>
+                  <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:someone@yoursite.com"> ansahgideon590@gmail.com</a></li>
+                  <li><i class="fa fa-globe"></i> <span> Website:</span> <a href="#">herokuapp.{{ config('app.name') }}.com</a></li>
                 </ul>
               </div>                            
             </div>

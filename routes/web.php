@@ -18,21 +18,15 @@ use Illuminate\Support\Facades\Crypt;
 Route::get('/', function () {
     return view('guestsViews/index');
 });
+
+Route::get('/Thank You', function () {
+    return view('guestsViews.thankYou');
+})->name('thankYou');
+
+
 // this will load for us apage for the guest who is there to request for his project
 // this is routed form the livewire component that works as the search function pnly if it finds a project matching the input data
 Route::get('/request_Project/{projectId}', [App\Http\Controllers\admin\projectController::class , 'guestViewProject'])->name('loadFoundProject');
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -43,6 +37,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
         // return view('dashboard');
 
 })->name('dashboard');
+
+
 
 // guestRoutes
 // Route::controller(OrderController::class)->group(function () {
@@ -70,6 +66,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 // admin routes
+// set the auth route register to false in the config/fortify under featured, i just commented that feature out
+
 Route::middleware(['auth:sanctum'])->get('/manage_website' , [App\Http\Controllers\admin\adminController::class , 'manageWebsite'])->name('manageWebsite');
 Route::middleware(['auth:sanctum'])->get('/manage_website/'.config('app.name').'/{aboutus}' , [App\Http\Controllers\admin\adminController::class , 'aboutUseEdit'])->name('editAboutUs');
 Route::middleware(['auth:sanctum'])->get('/manage_website/services' , [App\Http\Controllers\admin\adminController::class , 'services'])->name('adminServices');

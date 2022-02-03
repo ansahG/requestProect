@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Guests;
 use App\Models\admin\project\AddProject;
 use Illuminate\Support\Facades\Storage;
-
+use App\Http\Controllers\admin\projectController;
 use Livewire\Component;
 // ('storage/projectDocs/'
 class RequestProject extends Component
@@ -26,7 +26,13 @@ class RequestProject extends Component
         // conditin here, if the query is done and we find a project of that input id and its 1 or equal to one then we redirect the guest to the project page.
         if($projectFindingBus->count() >= 1)
         {
-            return redirect()->route('loadFoundProject', $this->projectId);   
+            // this response will hit the projectController action and download the project without necessary loadin a web route uri
+            // meanwhile we need to define a well methid uri in the route si the this method will use that to respond t the controller action through a javascript ajax method though it wont load the url in the browser
+            // here for some cool docs on this https://laravel.com/docs/8.x/responses#redirecting-controller-actions
+            return redirect()->action(
+            [
+                projectController::class, 'guestViewProject'], ['projectId' => $this->projectId]
+            );
         }
         // else if there is no project foud with that searched id(projectId), then we return this message to him/ her on the page
             else{
@@ -39,57 +45,3 @@ class RequestProject extends Component
     }
 }
 
-
-
-
-
-
-
-  // use WithPagination;
-
-  //   public $term;
-  //   // make a public variable of the models you want to search from
-  //   // i this case, we use the public skills and users variable
-  //   // public $users;
-  //   // public $skills;
-
-  //   public function render()
-  //   {
-  //        $term = '%' . $this->term . '%';
-        
-  //       $data = [
-  //           "skillCategory" => SkillCategory::where('name', 'like', $term)->get()
-  //       ];
-
-  //       return view('livewire.search', $data);
-  
-  //   }
-
-
-
-// @if($term)
-//     <div class="row">
-//         <div class="">
-//             @if($term != "")
-//                 @if($skillCategory->isEmpty())
-//                     <p>No results for <span style="color:red"> {{ "'$term'" }} </span></p>
-//                 @else
-//                     @foreach($skillCategory as $skillCategory)
-//                     <p style="align-content:center;"> results for <span style="color:green"> {{ "'$term'"     }} </span>: </p>
-//                                                 <a href="" class="flex items-center">
-//                     <a href="/{{ $skillCategory->majorCat->name }}/{{ $skillCategory->name }} ">  
-//                      <div class="ml-3">{{ $skillCategory->name }} in
-//                      <small style="color: blueviolet;font-style: bold">{{ $skillCategory->majorCat->name }} </small>
-//                        </div>
-//                     </a>
-
-//                         </a>
-//                     @endforeach
-//                 @endif
-//             @endif
-//         </div>
-   
-
-//     </div>
-
-// @endif

@@ -16,19 +16,63 @@
     <style>
         body {
             font-family: 'Nunito';
-/*            background: {{ url('thankYou.mp4') }};
-*/        }
+            margin: 0;
+            padding: 0;
+       }
+       .banner{
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       .banner video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+       }
+       .banner .content{
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        margin: 0 auto;
+
+       }
+        .banner .content h1{
+        margin: 0;
+        font-size: 4.5em;
+        text-transform: center;
+        color: #fff;
+
+       }
+
     </style>
 </head>
 <body style="background-attachment:;">
+{{-- 
+        @if(session()->has('Downloding'))
+            <h3>
+   <meta charset="utf-8" http-equiv="refresh" content="5;url{{ session()->get('Downloding') }}">
+            </h3>
+        @endif --}}
+
     
 {{--  url({{ asset('thankYou.mp4') }}); --}}
-    <div class="container-fluid my-5 pt-5 px-5">
-        <div class="row justify-content-center px-4">
-            <div class="col-md-12 col-lg-9">
-                
-                <h2> Thank you for choosing </h2>
-             <iframe src="{{ asset('thankYou.mp4') }}"></iframe>
+    <div class="container-fluid">
+        <div class="banner col-12">
+            <video autoplay muted loop>
+                <source src="{{ asset('thankYou.mp4') }}" type="video/mp4">
+            </video>
+            <div class="content">
+                <h1 style="text-decoration: underline"> Thank you for choosing <span style="color:red; background-color:white;text-decoration: underline"> {{ config('app.name') }}</span></h1>
+
+                    <br>
+                <h2 style="font-style: italic; color: whitesmoke;"> Enjoy ... </h2>
             </div>
         </div>
     </div>

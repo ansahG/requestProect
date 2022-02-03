@@ -1,3 +1,5 @@
+{{-- fefault jetstream index. Only being used for profile page in the app --}}
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
