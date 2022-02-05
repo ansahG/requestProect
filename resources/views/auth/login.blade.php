@@ -1,10 +1,12 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+{{--             <x-jet-authentication-card-logo />
+ --}}        
+                    <h1 style="text-align:center;" class="text-white">JM</h1>
         </x-slot>
 
-        <div class="card-body">
+        <div class="card-body" style="background-color:transparent;">
 
             <x-jet-validation-errors class="mb-3 rounded-0" />
 

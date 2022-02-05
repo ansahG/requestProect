@@ -507,7 +507,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
-            <p>&copy; 2022 {{ config('app.name') }} </p>
+            <p>&copy; <a href="{{ route('login') }}"> Admin </a> 2022 {{ config('app.name') }} </p>
           </div>
           <div class="col-sm-6">
 {{--             <p class="pull-right">Designed by <a href="http://www.themeum.com/">Themeum</a></p>

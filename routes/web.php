@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Crypt;
 // guest Routes right here
 Route::get('/', function () {
     return view('guestsViews/index');
-});
+})->name('guest.Index');
 
 Route::get('/Thank You', function () {
     return view('guestsViews.thankYou');

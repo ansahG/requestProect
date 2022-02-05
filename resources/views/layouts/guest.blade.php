@@ -17,8 +17,16 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <style type="text/css">
+             body{
+                background-image: url('guestAssets/images/talkTothem.jpeg');
+                background-repeat: no-repeat;
+                background-size: cover;
+             }
+
+        </style>
     </head>
-    <body class="bg-light font-sans antialiased">
+    <body class=" font-sans antialiased">
         {{ $slot }}
     </body>
 </html>
