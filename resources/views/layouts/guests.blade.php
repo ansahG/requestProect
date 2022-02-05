@@ -102,7 +102,7 @@
         <div class="row">
           <div class="text-center col-sm-8 col-sm-offset-2">
             <h2>Our Services</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+            <p>Find our services here, dont forget to use the contact form to contact us should any question </p>
           </div>
         </div> 
       </div>
