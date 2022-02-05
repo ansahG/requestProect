@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Livewire\Guests;
-use App\Models\Aboutus;
+use App\Models\AboutUs;
 use Livewire\Component;
 
 class AboutUsSection extends Component
