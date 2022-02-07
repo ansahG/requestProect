@@ -12,7 +12,7 @@ class DashboardComponent extends Component
     {
         return view('livewire.admin.dashboard-component',[
             'bookingsCount' => Booking::count(),
-            'esttimatedIncome'=> AddProject::sum('amount_charged'),
+            'esttimatedIncome'=> auth()->user()->addProject()->sum('amount_charged'),
             'projects'=> AddProject::get(),
         ]);
     }
