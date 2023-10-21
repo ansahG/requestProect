@@ -28,5 +28,10 @@ class AddProject extends Model
         'projectId',
     ];
 
+
+    public function amountCharged(){
+    return $this->sum('amount_charged');
+        }
+
     use HasFactory;
 }
