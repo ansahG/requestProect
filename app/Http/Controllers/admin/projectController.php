@@ -10,7 +10,7 @@ class projectController extends Controller
 {
     public function addProject()
     {
-        return view('adminDashboard.project.addProject');
+        return view('adminDashboard.Project.addProject');
     }
 
      public function AdminViewProject(AddProject $project)
